@@ -3,7 +3,7 @@
 Provide a dialog box to select installed app from local machine.
 ![image](https://github.com/TianXiaTech/AppsFolderDialog/assets/22126367/26ad6a1e-3274-4ffa-80f0-2a9264a114e0)
 
-the selected item is Application User Model ID ,You can run it in the following way
+the selected item is [Application User Model ID](https://learn.microsoft.com/en-us/windows/win32/shell/appids) ,You can run it in the following way
 
 **Run dialog**
 ```
