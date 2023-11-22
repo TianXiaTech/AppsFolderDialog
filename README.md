@@ -25,6 +25,23 @@ shell:appsfolder\Microsoft.Windows.MediaPlayer32
 
 https://github.com/TianXiaTech/AppsFolderDialog/assets/22126367/cc6bd420-8abb-48cb-b353-13f36dba4693
 
+# Usage
+```Powershell
+PM>NuGet\Install-Package AppsFolderDialog -Version 0.0.1
+```
+```C#
+            AppsFolderDialog.AppsFolderDialog appsFolderDialog = new AppsFolderDialog.AppsFolderDialog();
+            var result = await appsFolderDialog.ShowDialog();
+
+            if(result)
+            {
+                foreach (var path in appsFolderDialog.SelectedPath)
+                {
+                    MessageBox.Show(path);
+                }
+            }
+```
+
 ### LICENSE
 [Apache License](LICENSE)
 
