@@ -1,0 +1,13 @@
+﻿<Window x:Class="AppsFolderDialog.ConfirmWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AppsFolderDialog"
+        mc:Ignorable="d"
+        Title="ConfirmWindow" Height="50" Width="600" WindowStyle="None" BorderThickness="0">
+    <Grid>
+        <Button Content="确认" Width="88" Height="28" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,110,0" Click="btnOpen_Click"/>
+        <Button Content="取消" Width="88" Height="28" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" Click="btnCancel_Click"/>
+    </Grid>
+</Window>
