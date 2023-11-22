@@ -30,16 +30,16 @@ https://github.com/TianXiaTech/AppsFolderDialog/assets/22126367/cc6bd420-8abb-48
 PM>NuGet\Install-Package AppsFolderDialog -Version 0.0.1
 ```
 ```C#
-            AppsFolderDialog.AppsFolderDialog appsFolderDialog = new AppsFolderDialog.AppsFolderDialog();
-            var result = await appsFolderDialog.ShowDialog();
+AppsFolderDialog.AppsFolderDialog appsFolderDialog = new AppsFolderDialog.AppsFolderDialog();
+var result = await appsFolderDialog.ShowDialog();
 
-            if(result)
-            {
-                foreach (var path in appsFolderDialog.SelectedPath)
-                {
-                    MessageBox.Show(path);
-                }
-            }
+if(result)
+{
+     foreach (var path in appsFolderDialog.SelectedPath)
+          {
+              MessageBox.Show(path);
+          }
+ }
 ```
 
 ### LICENSE
