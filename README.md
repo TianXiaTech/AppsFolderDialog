@@ -25,3 +25,6 @@ shell:appsfolder\Microsoft.Windows.MediaPlayer32
 
 https://github.com/TianXiaTech/AppsFolderDialog/assets/22126367/cc6bd420-8abb-48cb-b353-13f36dba4693
 
+### LICENSE
+[Apache License](LICENSE)
+
