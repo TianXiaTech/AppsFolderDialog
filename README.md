@@ -8,13 +8,13 @@ the selected item is [Application User Model ID](https://learn.microsoft.com/en-
 **Run dialog**
 ```
 shell:appsfolder\xxx
-shell:appsfolder\Microsoft.Windows.MediaPlayer32
+shell:appsfolder\Microsoft.Windows.MediaPlayer32   //Windows Media Player
 ```
 
 **C#**
 ```C#
 System.Diagnostic.Process.Start("explorer.exe","shell:appsfolder\xxx");
-System.Diagnostic.Process.Start("explorer.exe","shell:appsfolder\Microsoft.Windows.MediaPlayer32");
+System.Diagnostic.Process.Start("explorer.exe","shell:appsfolder\Microsoft.Windows.MediaPlayer32");  //Windows Media Player
 ```
 
 **Preview**
