@@ -27,35 +27,35 @@ https://github.com/TianXiaTech/AppsFolderDialog/assets/22126367/76a04910-6261-48
 
 # Usage
 ```Powershell
-            PM>NuGet\Install-Package AppsFolderDialog -Version 0.0.1
+PM>NuGet\Install-Package AppsFolderDialog -Version 0.0.1
 ```
 ```C#
-            AppsFolderDialog.AppsFolderDialog appsFolderDialog = new AppsFolderDialog.AppsFolderDialog();
-            var result = await appsFolderDialog.ShowDialog();
+AppsFolderDialog.AppsFolderDialog appsFolderDialog = new AppsFolderDialog.AppsFolderDialog();
+var result = await appsFolderDialog.ShowDialog();
 
-            if(result)
-            {
-                //this.listbox.ItemsSource = appsFolderDialog.SelectedPath.ToList();
-                foreach (var item in appsFolderDialog.SelectedPath)
-                {
-                    switch(item.PathType)
-                    {
-                        case AppsFolderDialog.PathType.Absolute:
-                            //Absolute
-                            System.Diagnostics.Process.Start(item.Path);
-                            break;
-                        case AppsFolderDialog.PathType.AUMID:
-                            //AUMID
-                            System.Diagnostics.Process.Start("explorer.exe", item.Path);
-                            break;
-                        case AppsFolderDialog.PathType.Folder:
-                            //Folder
-                            break;
-                        default:
-                            break;
-                    }
-                }
-            }
+if(result)
+{
+    //this.listbox.ItemsSource = appsFolderDialog.SelectedPath.ToList();
+    foreach (var item in appsFolderDialog.SelectedPath)
+    {
+        switch(item.PathType)
+        {
+            case AppsFolderDialog.PathType.Absolute:
+                //Absolute
+                System.Diagnostics.Process.Start(item.Path);
+                break;
+            case AppsFolderDialog.PathType.AUMID:
+                //AUMID
+                System.Diagnostics.Process.Start("explorer.exe", item.Path);
+                break;
+            case AppsFolderDialog.PathType.Folder:
+                //Folder
+                break;
+            default:
+                break;
+        }
+    }
+}
 ```
 
 ### LICENSE
