@@ -21,16 +21,16 @@ namespace AppsFolderDialog
 {
     public class AppsFolderDialog
     {
-        private string[] selectedPath;
+        private AppsFolderPath[] selectedPath;
         private bool dialogResult = false;
         private bool liveFlag = true;
         private AutoResetEvent autoResetEvent = new AutoResetEvent(false);
 
-        public string[] SelectedPath { get => selectedPath; private set => selectedPath = value; }
+        public AppsFolderPath[] SelectedPath { get => selectedPath; private set => selectedPath = value; }
 
         public async Task<bool> ShowDialog()
         {
-            var selectedList = new List<string>();
+            var selectedList = new List<AppsFolderPath>();
             var process = System.Diagnostics.Process.Start("explorer.exe", "shell:appsfolder");
             var handle = await GetApplicationHwndAsync();
             CreateHostWindow(handle);
@@ -53,9 +53,12 @@ namespace AppsFolderDialog
                         Shell32.FolderItems items = ((Shell32.IShellFolderViewDual2)window.Document).SelectedItems();
                         foreach (Shell32.FolderItem item in items)
                         {
-                            selectedList.Add(item.Path);
+                            AppsFolderPath appsFolderPath = new AppsFolderPath();
+                            (var path, var type) = GetFormatedPath(item.Path);
+                            appsFolderPath.Path = path;
+                            appsFolderPath.PathType = type;
+                            selectedList.Add(appsFolderPath);
                         }
-
                         selectedPath = selectedList.ToArray();
                         CloseShellExplorer(handle);
                         break;
@@ -64,6 +67,17 @@ namespace AppsFolderDialog
             }
 
             return dialogResult;
+        }
+
+        private Tuple<string,PathType> GetFormatedPath(string path)
+        {
+            if (System.IO.Directory.Exists(path))
+                return new Tuple<string, PathType>(path, PathType.Folder);
+
+            if (System.IO.File.Exists(path))
+                return new Tuple<string, PathType>(path, PathType.Absolute);
+
+            return new Tuple<string, PathType>("shell:appsfolder\\" + path, PathType.AUMID);
         }
 
         private async Task<IntPtr> GetApplicationHwndAsync()

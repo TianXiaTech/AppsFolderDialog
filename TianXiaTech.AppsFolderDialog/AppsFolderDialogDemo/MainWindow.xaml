@@ -7,6 +7,33 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="浏览" Click="Button_Click"></Button>
+       <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition Width="4*"/>
+        </Grid.ColumnDefinitions>
+
+        <Button HorizontalAlignment="Center" VerticalAlignment="Center" Content="浏览" Click="Button_Click" Width="88" Height="28"></Button>
+
+        <ListBox Grid.Column="1" Name="listbox" MouseDoubleClick="listbox_MouseDoubleClick">
+            <ListBox.ContextMenu>
+                <ContextMenu>
+                    <MenuItem Header="运行" Click="MenuItem_Click"></MenuItem>
+                </ContextMenu>
+            </ListBox.ContextMenu>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <StackPanel>
+                        <Grid>
+                            <Label Content="路径:" HorizontalAlignment="Left" VerticalContentAlignment="Center"></Label>
+                            <Label Content="{Binding Path}" FontSize="15" FontWeight="Bold" Margin="40,0,0,0" VerticalContentAlignment="Center"></Label>
+                        </Grid>
+                        <Grid>
+                            <Label Content="类型:" HorizontalAlignment="Left"></Label>
+                            <Label Content="{Binding PathType}" FontSize="15" FontWeight="Bold" Margin="40,0,0,0" VerticalContentAlignment="Center"></Label>
+                        </Grid>
+                    </StackPanel>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </Grid>
 </Window>

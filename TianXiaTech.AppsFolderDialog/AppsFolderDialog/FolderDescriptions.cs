@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AppsFolderDialog
 {
-    public class FolderDescriptions
+    internal class FolderDescriptions
     {
         public Dictionary<string, string> Map = new Dictionary<string, string>()
         {

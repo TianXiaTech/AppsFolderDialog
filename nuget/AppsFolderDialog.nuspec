@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+<package>
+  <metadata>
+    <id>AppsFolderDialog</id>
+    <title>AppsFolderDialog</title>
+    <version>0.0.1</version>
+    <authors>ZTI</authors>
+    <projectUrl>https://github.com/TianXiaTech/AppsFolderDialog</projectUrl>
+    <icon>icon.png</icon>
+    <license type="file">LICENSE.txt</license>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>
+    Provide a dialog box to select all applications on this machine(shell:AppsFolder as a OpenFileDialog)
+    </description>
+	<releaseNotes>0.0.1</releaseNotes>
+	<copyright>Copyright ©2023 ZTI</copyright>
+	<tags>WPF OpenFileDialog Shell AppsFolder FileBrowser Dialog</tags>	
+	<dependencies>
+        <group targetFramework=".NETFramework4.7.2"></group>  
+         <group targetFramework=".NETCoreApp3.1"></group>
+        <group targetFramework="NET6.0-Windows10.0.17763.0"></group>
+    </dependencies>
+    <readme>README.md</readme>
+ </metadata>
+ <files>
+    <file src="lib\**" target="lib" />
+	<file src="icon.png" target="." /> 
+    <file src="LICENSE.txt" target="." />	
+    <file src="README.md" target="."/>
+</files>
+</package>

@@ -4,10 +4,11 @@ using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
 using System.Windows;
+using System.Windows.Documents;
 
 namespace AppsFolderDialog
 {
-    public class WindowsHelper
+    internal class WindowsHelper
     {
         public const uint SWP_SHOWWINDOW = 0x0040;
         public const uint WM_CLOSE = 0x0010;
@@ -29,6 +30,7 @@ namespace AppsFolderDialog
 
         [DllImport("User32.dll")]
         public static extern int SendMessage(IntPtr hWnd,uint Msg, IntPtr wParam, IntPtr lParam);
+
 
         public struct tagRECT
         {

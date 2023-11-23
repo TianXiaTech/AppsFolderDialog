@@ -32,11 +32,42 @@ namespace AppsFolderDialogDemo
 
             if(result)
             {
-                foreach (var path in appsFolderDialog.SelectedPath)
-                {
-                    MessageBox.Show(path);
-                }
+                this.listbox.ItemsSource = appsFolderDialog.SelectedPath.ToList();
             }
+        }
+
+        private void listbox_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            if (this.listbox.SelectedIndex == -1)
+                return;
+
+            var selectedItem = this.listbox.SelectedItem as AppsFolderDialog.AppsFolderPath;
+            RunAppsFolderSelectedItem(selectedItem);
+        }
+
+        private void MenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.listbox.SelectedIndex == -1)
+                return;
+
+            var selectedItem = this.listbox.SelectedItem as AppsFolderDialog.AppsFolderPath;
+            RunAppsFolderSelectedItem(selectedItem);
+        }
+
+        private void RunAppsFolderSelectedItem(AppsFolderDialog.AppsFolderPath appsFolderPath)
+        {
+            if (appsFolderPath == null || string.IsNullOrEmpty(appsFolderPath.Path))
+                return;
+
+            if (appsFolderPath.PathType == AppsFolderDialog.PathType.Absolute)
+            {
+                System.Diagnostics.Process.Start(appsFolderPath.Path);
+            }
+            else
+            {
+                System.Diagnostics.Process.Start("explorer.exe", appsFolderPath.Path);
+            }
+
         }
     }
 }

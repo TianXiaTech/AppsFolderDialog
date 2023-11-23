@@ -8,7 +8,7 @@ using System.Windows.Documents;
 
 namespace AppsFolderDialog
 {
-    public class WindowsHelper
+    internal class WindowsHelper
     {
         public const uint SWP_SHOWWINDOW = 0x0040;
         public const uint WM_CLOSE = 0x0010;
