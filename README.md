@@ -5,37 +5,57 @@ Provide a dialog box to select installed app from local machine.
 
 the selected item is [Application User Model ID](https://learn.microsoft.com/en-us/windows/win32/shell/appids) ,You can run it in the following way
 
-**Run dialog**
+* **Run dialog**
 ```
 shell:appsfolder\xxx
-shell:appsfolder\Microsoft.Windows.MediaPlayer32   //Windows Media Player
 ```
 
-**C#**
+* **C#**
 ```C#
 System.Diagnostic.Process.Start("explorer.exe","shell:appsfolder\xxx");
-System.Diagnostic.Process.Start("explorer.exe","shell:appsfolder\Microsoft.Windows.MediaPlayer32");  //Windows Media Player
 ```
 
-**Preview**
+# Example
+```C#
+System.Diagnostic.Process.Start("explorer.exe","shell:appsfolder\Microsoft.Windows.MediaPlayer32");  //open Windows Media Player
+```
 
-https://github.com/TianXiaTech/AppsFolderDialog/assets/22126367/cc6bd420-8abb-48cb-b353-13f36dba4693
+# Preview
+
+https://github.com/TianXiaTech/AppsFolderDialog/assets/22126367/76a04910-6261-4811-9233-814f802eb7ed
+
 
 # Usage
 ```Powershell
-PM>NuGet\Install-Package AppsFolderDialog -Version 0.0.1
+            PM>NuGet\Install-Package AppsFolderDialog -Version 0.0.1
 ```
 ```C#
-AppsFolderDialog.AppsFolderDialog appsFolderDialog = new AppsFolderDialog.AppsFolderDialog();
-var result = await appsFolderDialog.ShowDialog();
+            AppsFolderDialog.AppsFolderDialog appsFolderDialog = new AppsFolderDialog.AppsFolderDialog();
+            var result = await appsFolderDialog.ShowDialog();
 
-if(result)
-{
-     foreach (var path in appsFolderDialog.SelectedPath)
-          {
-              MessageBox.Show(path);
-          }
- }
+            if(result)
+            {
+                //this.listbox.ItemsSource = appsFolderDialog.SelectedPath.ToList();
+                foreach (var item in appsFolderDialog.SelectedPath)
+                {
+                    switch(item.PathType)
+                    {
+                        case AppsFolderDialog.PathType.Absolute:
+                            //Absolute
+                            System.Diagnostics.Process.Start(item.Path);
+                            break;
+                        case AppsFolderDialog.PathType.AUMID:
+                            //AUMID
+                            System.Diagnostics.Process.Start("explorer.exe", item.Path);
+                            break;
+                        case AppsFolderDialog.PathType.Folder:
+                            //Folder
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
 ```
 
 ### LICENSE
