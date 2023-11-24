@@ -12,9 +12,9 @@
     <description>
     Provide a dialog box to select all applications on this machine(shell:AppsFolder as a OpenFileDialog)
     </description>
-	<releaseNotes>0.0.1</releaseNotes>
+	<releaseNotes>Add basic app selection</releaseNotes>
 	<copyright>Copyright ©2023 ZTI</copyright>
-	<tags>WPF OpenFileDialog Shell AppsFolder FileBrowser Dialog</tags>	
+	<tags>WPF OpenFileDialog AppBrowserDialog Shell AppsFolder FileBrowser Dialog</tags>	
 	<dependencies>
         <group targetFramework=".NETFramework4.7.2"></group>  
          <group targetFramework=".NETCoreApp3.1"></group>
