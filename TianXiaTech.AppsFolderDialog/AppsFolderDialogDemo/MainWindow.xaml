@@ -22,7 +22,11 @@
             </ListBox.ContextMenu>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
+                    <StackPanel Margin="5">
+                        <Grid>
+                            <Label Content="名称:" HorizontalAlignment="Left" VerticalContentAlignment="Center"></Label>
+                            <Label Content="{Binding Name}" FontSize="15" FontWeight="Bold" Margin="40,0,0,0" VerticalContentAlignment="Center" Foreground="#FF2E77DA" FontFamily="Arial"></Label>
+                        </Grid>
                         <Grid>
                             <Label Content="路径:" HorizontalAlignment="Left" VerticalContentAlignment="Center"></Label>
                             <Label Content="{Binding Path}" FontSize="15" FontWeight="Bold" Margin="40,0,0,0" VerticalContentAlignment="Center"></Label>
