@@ -8,8 +8,8 @@ namespace AppsFolderDialog
 {
     public class AppsFolderPath
     {
+        public string Name { get; set; }
         public string Path { get; set; }
-
         public PathType PathType { get; set; }
     }
 

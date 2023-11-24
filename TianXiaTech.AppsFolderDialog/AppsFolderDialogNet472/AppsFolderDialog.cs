@@ -54,6 +54,7 @@ namespace AppsFolderDialog
                         foreach (Shell32.FolderItem item in items)
                         {
                             AppsFolderPath appsFolderPath = new AppsFolderPath();
+                            appsFolderPath.Name = item.Name;
                             (var path, var type) = GetFormatedPath(item.Path);
                             appsFolderPath.Path = path;
                             appsFolderPath.PathType = type;
