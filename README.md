@@ -1,5 +1,24 @@
 # AppsFolderDialog
 
+<p align="center">
+ <img align="center" alt="logo" src="nuget/icon.png" />
+</p>
+</p>
+<p align="center">
+<a href="https://github.com/TianXiaTech/AppsFolderDialog/stargazers" target="_blank">
+ <img alt="GitHub stars" src="https://img.shields.io/github/stars/TianXiaTech/AppsFolderDialog" />
+</a>
+<a href="https://github.com/TianXiaTech/AppsFolderDialog/releases" target="_blank">
+ <img alt="All releases" src="https://img.shields.io/github/downloads/TianXiaTech/AppsFolderDialog/total.svg" />
+</a>
+<a href="https://github.com/TianXiaTech/AppsFolderDialog/network/members" target="_blank">
+ <img alt="Github forks" src="https://img.shields.io/github/forks/TianXiaTech/AppsFolderDialog" />
+</a>
+<a href="https://github.com/TianXiaTech/AppsFolderDialog/issues" target="_blank">
+ <img alt="All issues" src="https://img.shields.io/github/issues/TianXiaTech/AppsFolderDialog" />
+</a>
+</p>
+
 Provide a dialog box to select installed app from local machine.
 ![image](https://github.com/TianXiaTech/AppsFolderDialog/assets/22126367/26ad6a1e-3274-4ffa-80f0-2a9264a114e0)
 
