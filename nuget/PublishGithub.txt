@@ -1,0 +1,1 @@
+dotnet nuget push ".\AppsFolderDialog.0.0.1.1.nupkg"  --api-key xxx --source "github"
